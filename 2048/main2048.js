@@ -77,8 +77,9 @@ function creatNum() {
     // 随机一个位置
     var randX = parseInt(Math.floor(Math.random() * 4)); //0, 1, 2, 3
     var randY = parseInt(Math.floor(Math.random() * 4));
-    var time = 0; //随机数生成次数
-    while (time < 50) {
+
+    var times = 0; //随机数生成次数
+    while (times < 50) {
         if (board[randX][randY] == 0) {
             break;
         }
@@ -86,14 +87,16 @@ function creatNum() {
         var randX = parseInt(Math.floor(Math.random() * 4)); //0, 1, 2, 3
         var randY = parseInt(Math.floor(Math.random() * 4));
 
-        time++;
+        times++;
     }
 
-    for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 4; j++) {
-            if (board[i][j] == 0) {
-                randX = i;
-                randY = j;
+    if (times == 50) {
+        for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+                if (board[i][j] == 0) {
+                    randX = i;
+                    randY = j;
+                }
             }
         }
     }
